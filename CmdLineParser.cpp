@@ -183,7 +183,7 @@ bool CCmdLineParser::HasVal(LPCTSTR sKey) const {
 // Returns value if value was found or NULL otherwise
 LPCTSTR CCmdLineParser::GetVal(LPCTSTR sKey) const {
 	CValsMap::const_iterator it = findKey(sKey);
-	if(it == m_ValsMap.end()) return false;
+	if(it == m_ValsMap.end()) return nullptr;
 	return LPCTSTR(it->second);
 }
 // Returns true if value was found
