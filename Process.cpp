@@ -404,7 +404,7 @@ bool StartProcess(Settings& settings, HANDLE hCmdPipe)
 
 		if(false == settings.allowedProcessors.empty())
 		{
-			DWORD sysMask = 0, procMask = 0;
+			DWORD_PTR sysMask = 0, procMask = 0;
 			VERIFY(GetProcessAffinityMask(pi.hProcess, &procMask, &sysMask));
 			procMask = 0;
 			for(std::vector<WORD>::iterator itr = settings.allowedProcessors.begin(); settings.allowedProcessors.end() != itr; itr++)
